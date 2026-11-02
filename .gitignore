@@ -1,0 +1,28 @@
+# 環境変数・認証情報（絶対にコミット・公開しない）
+.env
+*.env
+.env.*
+
+# Python 関連キャッシュ・仮想環境
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# ログファイル・OS一時ファイル
+*.log
+.DS_Store
+Thumbs.db
+
+# dbt 関連（後ほど使用）
+target/
+dbt_packages/
+logs/
+
+# Terraform 関連（後ほど使用）
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
