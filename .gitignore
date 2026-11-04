@@ -26,3 +26,6 @@ logs/
 *.tfstate
 *.tfstate.*
 crash.log
+
+# ローカル生成データ
+data/
