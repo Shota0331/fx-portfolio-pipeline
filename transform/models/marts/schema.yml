@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: fct_exchange_rate_moving_averages
+    description: "通貨ペアごとの日次為替レートおよび7日・30日移動平均を保持する分析用ファクトテーブル"
+    columns:
+      - name: rate_date
+        description: "為替レートの基準日"
+        tests:
+          - not_null
+
+      - name: base_currency
+        description: "基準通貨コード（USD）"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['USD']
+
+      - name: target_currency
+        description: "対象通貨コード（EUR, JPY, GBP）"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['EUR', 'JPY', 'GBP']
+
+      - name: exchange_rate
+        description: "当日の為替レート"
+        tests:
+          - not_null
+
+      - name: ma_7_days
+        description: "過去7営業日の移動平均レート"
+        tests:
+          - not_null
+
+      - name: ma_30_days
+        description: "過去30営業日の移動平均レート"
+        tests:
+          - not_null

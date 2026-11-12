@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: public
+    database: fx_pipeline
+    schema: public
+    tables:
+      - name: exchange_rates
+        description: "Frankfurter API から Python スクリプト経由で UPSERT された為替レート生テーブル"
