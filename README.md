@@ -1,21 +1,16 @@
-# FX Rate Tracking & Profit/Loss Simulator Pipeline
+# FX Exchange Rate Pipeline
 
-An end-to-end data pipeline for tracking foreign exchange (FX) rates and simulating currency profit and loss (P&L), built entirely with open-source tools.
-
-## Overview
-This platform automates the daily extraction and ingestion of foreign exchange rates, transforms historical time-series data, and provides an interactive dashboard to simulate investment gains and losses across custom dates and currency pairs.
+An end-to-end ELT pipeline that extracts daily exchange rates from the Frankfurter API, loads them into PostgreSQL, builds 7-day and 30-day moving average models with dbt, and visualizes the trends on a Streamlit dashboard.
 
 ## Tech Stack
 - **Languages**: Python, SQL
-- **Orchestration**: Apache Airflow
+- **Orchestration / Automation**: GNU Make
 - **Data Warehouse / Storage**: PostgreSQL
-- **Data Transformation & Modeling**: dbt
+- **Data Transformation & Testing**: dbt
 - **Visualization / UI**: Streamlit
-- **Infrastructure & Containerization**: Docker, Docker Compose, Terraform
-- **Version Control & CI/CD**: Git, GitHub, GitHub Actions
+- **Infrastructure & Containerization**: Docker, Docker Compose
+- **Version Control**: Git, GitHub
 
 ## Architecture
-*(To be updated as development progresses)*
 
-## Directory Structure
-*(To be updated as development progresses)*
+Frankfurter API -> Python (Ingestion) -> PostgreSQL -> dbt (Staging & Mart) -> Streamlit
